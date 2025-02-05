@@ -4,12 +4,22 @@
     src: url(/Poppins/Poppins-Regular.ttf);
 }
 
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+*{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
     background-color:black;
-    overflow: hidden;
+    text-size-adjust: none;
 }
 
 

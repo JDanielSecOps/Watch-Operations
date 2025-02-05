@@ -4,14 +4,23 @@
     src: url(/Poppins/Poppins-Regular.ttf);
 }
 
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+*{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: content-box;
     background-color:black;
     color: white;
-    overflow: hidden;
-
+    text-size-adjust: none;
 }
 
 @media screen and (max-width:1024px){
@@ -39,6 +48,7 @@ main{
     grid-template-columns:repeat(5,200px);
     grid-gap:4%;
     max-height: 100%;
+    
 
 }
 
@@ -75,7 +85,7 @@ main{
     height: 50px;
     box-shadow: 0 0 5px 2px white;
     transition: box-shadow 1s ease-in-out;
-    overflow: hidden;
+    
 }
 
 .Overall-Grid:hover{
@@ -169,6 +179,7 @@ main{
     box-shadow: 0 0 5px 2px white;
     transition: box-shadow 1s ease-in-out;
     overflow: hidden;
+    
 }
 
 .Head-Grid:hover{
