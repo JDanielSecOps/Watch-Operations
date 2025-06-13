@@ -6,7 +6,7 @@ import Loading from "./loading";
 import { useQuery } from "@tanstack/react-query";
 import { createClient } from "@/utils/supabase/client";
 import AlertsCard from "@/components/alerts-page/alertscard/alertscard";
-import MiniLoader from "@/components/mini-loader/mini-loader";
+
 
 
 
