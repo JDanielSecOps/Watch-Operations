@@ -1,15 +1,11 @@
 "use client"
 
 import LoginFormStyle from "@/components/login-page/login form/login-form.module.scss"
-import React, { use } from "react";
-import { useForm , SubmitHandler } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import {z} from "zod"
-import { Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, None } from "motion/react";
-import { promise } from "zod/v4";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { redirect,useRouter } from "next/navigation";
+import { motion} from "motion/react";
+import { useRouter } from "next/router";
 import {createClient}from "@/utils/supabase/client";
 
 const schema =z.object({

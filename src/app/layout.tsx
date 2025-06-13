@@ -3,8 +3,7 @@
 import React from "react";
 import { Metadata } from "next";
 import "@/styles/layout.scss"
-import Footer from "@/components/footer/footer";
-import LoginNavbar from "@/components/login-page/login page navbar/login-navbar";
+
 
 
 

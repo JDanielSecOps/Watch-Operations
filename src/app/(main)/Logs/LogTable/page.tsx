@@ -7,7 +7,7 @@ import "@/styles/logtable.scss"
 import { useRouter } from "next/navigation"
 import { createClient } from "@/utils/supabase/client"
 import { useQuery } from "@tanstack/react-query"
-import Link from "next/link"
+
 
 
 const LogTable =()=>{
@@ -24,32 +24,13 @@ const LogTable =()=>{
     const router=useRouter()
     const {data} =useContext(formcontext)
     const [PageLoaded,SetPageLoaded]=useState(false)
-
-    if(!data?.dataset && !data?.ending_date && !data?.starting_date){
-        return(
-            <div className="center_error">
-                    <div className="error">Data not available</div>
-            </div>
-        )
-    }
-
     const isalerts=data?.dataset==="Alerts" && !!data?.starting_date && !!data?.ending_date
     const isdriverslog=data?.dataset==="Driver Logs" && !!data?.starting_date && !!data?.ending_date
 
-    let isdataset=false
     const normalstartingdate=data?.starting_date.replace("T"," ") + ":00"
     const normalendingdate=data?.ending_date.replace("T"," ") + ":00"
-    
 
- 
-
-    if(data?.dataset && data?.ending_date && data?.starting_date){
-        isdataset=true
-    }
-
-    
-
-    const {data :driver_data ,isLoading :driver_data_loading ,isError : driver_data_error} =useQuery({
+    const {data :driver_data ,isLoading :driver_data_loading } =useQuery({
 
         queryKey:["Driver Logs"],
         queryFn:async()=>{
@@ -70,11 +51,9 @@ const LogTable =()=>{
         enabled:isdriverslog
     })
 
-  
 
-   
-    
-    const {data :alerts_data ,isLoading :alerts_data_loading,isError : alerts_data_error} =useQuery({
+
+    const {data :alerts_data ,isLoading :alerts_data_loading} =useQuery({
 
         queryKey:["Alerts"],
         queryFn:async()=>{
@@ -96,13 +75,20 @@ const LogTable =()=>{
         enabled:isalerts
     })
 
-
-
     useEffect(()=>{
         const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
         
         return ()=>{clearTimeout(timer)}
     },[])
+
+    if(!data?.dataset && !data?.ending_date && !data?.starting_date){
+        return(
+            <div className="center_error">
+                    <div className="error">Data not available</div>
+            </div>
+        )
+    }
+
 
     if(!PageLoaded){
     return <Loading/>

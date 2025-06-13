@@ -30,7 +30,7 @@ const DriverData=()=>{
     
 
     
-    const {data : query_data,isLoading,error : query_data_error,isError} =useQuery({
+    const {data : query_data,isError} =useQuery({
 
         queryKey:["driver data"],
         queryFn:async ()=>{
@@ -49,6 +49,18 @@ const DriverData=()=>{
 
     })
 
+    const [PageLoaded,SetPageLoaded]=useState(false)
+
+    useEffect(()=>{
+        const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
+        
+        return ()=>{clearTimeout(timer)}
+    },[])
+
+    if(!PageLoaded){
+    return <Loading/>
+    }
+
     if(isError){
         return(            
         <div className="center_error">
@@ -58,6 +70,8 @@ const DriverData=()=>{
 
 
     const date=new Date(query_data?.date_and_time).toLocaleString()
+
+
     
     
 
@@ -82,19 +96,10 @@ const DriverData=()=>{
 
     const alerts =Alertsetter(query_data?.alerts)
 
+
     
     
-    const [PageLoaded,SetPageLoaded]=useState(false)
 
-    useEffect(()=>{
-        const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
-        
-        return ()=>{clearTimeout(timer)}
-    },[])
-
-    if(!PageLoaded){
-    return <Loading/>
-    }
 
     function redirect(){
         router.push("/Logs/LogTable")

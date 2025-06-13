@@ -8,7 +8,7 @@ import "@/styles/logs.scss"
 
 const Logs=()=>{
     
-    const[pageloaded,setpageloaded]=useState<boolean | null>(false)
+
 
 
         

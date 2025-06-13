@@ -14,7 +14,7 @@ const Alerts =()=>{
 
     const supabase =createClient()
     const [Pageloaded,setPageLoaded]=useState(false)
-    const [isreload,setisreload]=useState(false)
+
 
     useEffect(()=>{
         const timer =setTimeout(()=>{setPageLoaded(true)},1000)
@@ -41,7 +41,7 @@ const Alerts =()=>{
         refetch()
     }
 
-    const {data :queried_alerts,isLoading,error,isError,refetch,isFetching}=useQuery({
+    const {data :queried_alerts,refetch}=useQuery({
         queryKey:["Immedite_alerts"],
         queryFn: async ()=>{
             const{error,data}=await supabase.from("driver")
@@ -70,7 +70,7 @@ const Alerts =()=>{
             <div>Most Recent Alerts</div>
            </div>
            <div className="sortcard">
-            {queried_alerts?.map((rows,id)=>{
+            {queried_alerts?.map((rows)=>{
 
                 return(
                     <AlertsCard

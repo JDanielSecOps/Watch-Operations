@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import AccountCardStyles from "@/components/accounts-page/accounts-card/account-card.module.scss"
 import MiniLoader from "@/components/mini-loader/mini-loader"
 import { motion } from "motion/react"
-import { animate } from "motion"
+
 
 
 
@@ -15,7 +15,7 @@ const AccountCard =()=>{
 
     const supabase =createClient()
 
-    const {data,error,isLoading,isError}=useQuery({
+    const {data,isLoading,isError}=useQuery({
         queryKey:["user_details"],
         queryFn:async()=>{
             const {data : {session} , error} =await supabase.auth.getSession()

@@ -1,5 +1,5 @@
 "use client"
-import { useState,useEffect, JSX } from "react";
+import { useState,useEffect} from "react";
 import Loading from "./loading";
 import DateAndTimeCard from "@/components/dashboard-page/date-and-time-card/date-and-time-card";
 import DrowsinessAndSeatStatus from "@/components/dashboard-page/drowsiness-and-seatstatus-card/drowsiness_and_seatstatus";
@@ -9,12 +9,10 @@ import "@/styles/dashboard.scss"
 import FourDataCard from "@/components/dashboard-page/four-data-card/four-data-card";
 import Googlemaps from "@/components/dashboard-page/google-maps/google-maps";
 import { createClient } from "@/utils/supabase/client";
-import { keepPreviousData, QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
-import MiniLoader from "@/components/mini-loader/mini-loader";
 import UnitLoader from "@/customhooks/unitloadhook/unitloadhook";
 import StateLoader from "@/customhooks/stateloadhook/stateloadhook";
 import Alertsetter from "@/customhooks/alerthook/alerts";
-import { data } from "motion/react-client";
+import { useQuery } from "@tanstack/react-query";
 
 
 

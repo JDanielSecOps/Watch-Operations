@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import Loading from "./loadings"
 import AccountCard from "@/components/accounts-page/accounts-card/account-card"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "@/styles/account.scss"
 
 
