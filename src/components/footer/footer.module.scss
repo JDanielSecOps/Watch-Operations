@@ -1,0 +1,29 @@
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    min-width:fit-content;
+    margin-bottom:0.5rem;
+
+    >div > a{
+        text-decoration: none;
+        opacity: 1;
+        color:rgb(0, 255, 47);
+        transition: opacity 1s ease ,color 1s ease;
+    }
+
+    >div > a:hover{
+        opacity: 0.5;
+        color:rgb(0, 217, 255);
+        transform: scale(1.1);
+    }
+}
+
+.content{
+    white-space:nowrap;
+}
+
+

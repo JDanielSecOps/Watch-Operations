@@ -1,0 +1,23 @@
+
+.loading-div{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg{
+    position:absolute;
+    top:15rem;
+    fill:linear-gradient(45deg,rgb(84, 229, 171),rgb(200, 101, 236));
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

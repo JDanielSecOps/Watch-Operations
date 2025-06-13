@@ -1,0 +1,10 @@
+
+.center{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    flex-shrink: 1;
+    padding:1rem 1rem 1rem 1rem;
+}

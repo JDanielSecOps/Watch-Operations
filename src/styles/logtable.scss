@@ -1,0 +1,146 @@
+
+
+
+.databar{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background: rgba(0, 0, 0, 0.381);
+    margin: 1rem;
+    padding:1rem;
+    border-radius:15px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.541);
+}
+
+.goback{
+    background: rgba(0, 0, 0, 0.381);
+    padding: 5px 10px 5px 10px;
+    border-radius:15px;
+    width:10rem;
+    border: none;
+    transition: color 1s ease ,transform 1s ease;
+    
+    &:hover{
+        color: rgb(0, 255, 115);
+        transform: scale(1.1);
+    }
+}
+
+
+.center_error{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+
+    & .error{
+        font-size:2rem;
+    }
+
+}
+
+.tableholder{
+    width:100%;
+    padding:1rem 2rem 2rem 2rem;
+    
+}
+
+caption{
+    font-size:1.5rem;
+    padding: 1rem;
+    font-weight: 10;
+}
+
+table{
+    
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.292);
+    border-radius:15px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.541);
+    
+}
+
+td,th{
+    padding: 1rem;
+    text-align:center;
+}
+
+
+tr:nth-of-type(2n){
+    background-color: rgba(0, 0, 0, 0.139);
+}
+
+
+.morebutton{
+    background-color: rgba(0, 0, 0, 0.374);
+    border-radius:15px;
+    padding:5px 10px 5px 10px;
+    border: none;
+    transition:color 1s ease,transform 1s ease;
+
+    &:hover{
+        transform:scale(1.1);
+        color: blueviolet;
+    }
+
+    > a{
+        text-decoration: none;
+    }
+}
+
+.centergoback{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+}
+
+@media (max-width:1116){
+
+    .databar{
+    display: flex;
+    flex-direction:column;
+    gap:1.2rem;
+    }
+}
+
+
+@media (max-width : 760){
+
+    th{
+        display: none;
+    }
+
+    td{
+        display:flex;  
+        word-break: break-all;
+    }
+
+    td::before{
+        content: attr(data-cell) " : ";
+        margin:0px 20px;
+        display:inline-block;
+        
+    }
+
+    table{
+        tr{
+            td:nth-child(6){
+                &::before{
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 415px){
+    
+    td::before{
+        content: attr(data-cell); 
+    }
+}

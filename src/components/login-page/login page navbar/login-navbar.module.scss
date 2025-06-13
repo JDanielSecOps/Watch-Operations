@@ -1,0 +1,68 @@
+
+$mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
+
+
+.navbar{   
+    display: flex;
+    flex-direction: row;
+}
+
+.image-and-title{
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    max-height:4rem;
+    gap:1rem;
+    margin-left: 0.1rem;
+    padding:0.6rem;
+    
+
+    > .symbol{
+        
+        display: inline-block;
+        animation: rotate 10s linear infinite;
+        fill:white;
+        height:3.12rem;
+        width:3.12rem;
+        filter: brightness(100%) ;
+        transition: fill 2s ease ,filter 2s ease;
+
+
+        &:hover{
+            fill: rgb(70, 222, 192);
+            filter: brightness(120%);
+        }
+    }
+
+    > .title{
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        text-align: justify;
+        color: white;
+        transition:color 1s ease;
+        
+    }
+
+    > .title:hover{
+        color:#65f2d1;
+    }
+
+
+}
+
+    @keyframes rotate {
+    from{
+        transform: rotate(0deg) scale(1)
+    }
+    to{
+        transform: rotate(360deg) scale(1)
+    }
+    };
+
+
+@media (max-width:320){
+
+    .title{
+        display: none;
+    }
+}

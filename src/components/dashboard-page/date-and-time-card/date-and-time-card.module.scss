@@ -1,0 +1,25 @@
+
+
+
+.card{
+   display: flex;
+   flex-direction: column;
+   justify-content:flex-start;
+   align-content: flex-start;
+   background-color: rgba(0, 0, 0, 0.445);
+   padding:1rem 5rem 1rem 1rem;
+   border-radius:0.95rem;
+   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.872);
+   width:18rem;
+   overflow: hidden;
+   white-space:nowrap;
+}
+
+.dateandtimetitle{
+    font-family: 1.1rem;
+    white-space: nowrap;
+}
+
+.dateandtime{
+    color: #32CD32;
+}

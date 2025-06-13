@@ -1,0 +1,33 @@
+
+.center{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding:20px;
+}
+
+.reenter{
+    position: relative;
+    padding-top:0.5rem;
+    left:1rem;
+    
+    & a{
+        text-decoration: none;
+        color: rgb(49, 205, 253);
+        transition:color 0.5s ease ;
+    }
+
+    & a:hover{
+        color: rgb(252, 152, 3);
+    }
+}
+
+
+@media(max-width:400px){
+    .reenter{
+        position: relative;
+        left: 0;
+    }
+}

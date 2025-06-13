@@ -1,0 +1,63 @@
+
+@font-face {
+    font-family:Poppins;
+    src: url("/Poppins/Poppins-Light.ttf");
+}
+
+
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*,*::after,*::before{
+    font-family:Poppins;
+    color: white;   
+    
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgb(236, 143, 240),rgb(79, 137, 230));
+}
+
+.center{
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+}
+
+
+.error{
+    font-size:2rem;
+}
+
+.explain{
+    font-size: 1rem;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 1s ease,transform 1s ease;
+    color: rgb(0, 204, 255);
+
+    &:hover{
+        color: rgba(0, 255, 0, 0.868);
+        transform: scale(0.9);
+    }
+}
