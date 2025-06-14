@@ -16,7 +16,7 @@ const SignoutButton=({className} : SignoutButtontypes)=>{
 
         const supabase =createClient()
         const {error}=await supabase.auth.signOut()
-        router.push("/")
+        window.location.href="/"
 
     }
 
