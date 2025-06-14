@@ -27,7 +27,10 @@ const Login =()=>{
         <QueryProvider>
         <div className="center">
             <LoginForm></LoginForm>
-            <span className="reenter">Already signed in ? <Link href={"/About"}>Click here to continue</Link></span>
+            <div className="centerlink">
+            <span className="reenter">Already signed in ? <Link href={"/About"} className="link1">Click here</Link></span>
+            <Link className="link2" href={"https://github.com/JDanielSecOps/Watch-Operations"}>Click here for login credentials</Link>
+            </div>
         </div>
         </QueryProvider>
         </>

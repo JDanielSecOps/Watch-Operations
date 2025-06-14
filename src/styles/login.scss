@@ -8,19 +8,43 @@
     padding:20px;
 }
 
-.reenter{
-    position: relative;
-    padding-top:0.5rem;
-    left:1rem;
-    
-    & a{
-        text-decoration: none;
-        color: rgb(49, 205, 253);
-        transition:color 0.5s ease ;
-    }
 
-    & a:hover{
-        color: rgb(252, 152, 3);
+.centerlink{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding:10px 0px 0px 0px;
+}
+
+.reenter{
+    position: relative
+}
+
+
+.link1{
+
+        text-decoration: none;
+        color: rgb(0, 255, 183);
+        transition:color 0.5s ease ;
+
+
+    &:hover{
+        color: rgb(252, 3, 140);
+    }
+}
+
+
+.link2{
+
+        text-decoration: none;
+        color: rgba(0, 225, 255, 0.747);
+        transition:color 0.5s ease ;
+        
+
+    &:hover{
+        color: rgb(152, 255, 168);
     }
 }
 
