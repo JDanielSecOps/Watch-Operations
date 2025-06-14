@@ -5,7 +5,7 @@ import { useForm} from "react-hook-form";
 import {z} from "zod"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion} from "motion/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {createClient}from "@/utils/supabase/client";
 
 const schema =z.object({

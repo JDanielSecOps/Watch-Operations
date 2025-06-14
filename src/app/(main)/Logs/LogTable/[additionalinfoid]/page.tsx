@@ -57,24 +57,6 @@ const DriverData=()=>{
         return ()=>{clearTimeout(timer)}
     },[])
 
-    if(!PageLoaded){
-    return <Loading/>
-    }
-
-    if(isError){
-        return(            
-        <div className="center_error">
-        <div className="error">Data not available</div>
-        </div>)
-    }
-
-
-    const date=new Date(query_data?.date_and_time).toLocaleString()
-
-
-    
-    
-
     const drowsiness=UnitLoader(query_data?.drowsiness,"%")
     const seat_status=StateLoader(query_data?.seat_status,"Occupied","Unoccupied")
 
@@ -95,6 +77,26 @@ const DriverData=()=>{
     const Altitude_from_sea_level=UnitLoader(query_data?.altitude_from_sea_level,"m")
 
     const alerts =Alertsetter(query_data?.alerts)
+
+    if(!PageLoaded){
+    return <Loading/>
+    }
+
+    if(isError){
+        return(            
+        <div className="center_error">
+        <div className="error">Data not available</div>
+        </div>)
+    }
+
+
+    const date=new Date(query_data?.date_and_time).toLocaleString()
+
+
+    
+    
+
+
 
 
     

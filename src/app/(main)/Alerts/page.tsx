@@ -16,14 +16,6 @@ const Alerts =()=>{
     const [Pageloaded,setPageLoaded]=useState(false)
 
 
-    useEffect(()=>{
-        const timer =setTimeout(()=>{setPageLoaded(true)},1000)
-        return ()=>{clearTimeout(timer)}
-    },[])
-
-    if(!Pageloaded){
-        <Loading/>
-    }
 
     async function alertresolved(id :string){
 
@@ -60,6 +52,18 @@ const Alerts =()=>{
             return data
         }
     })
+
+    
+    useEffect(()=>{
+        const timer =setTimeout(()=>{setPageLoaded(true)},1000)
+        return ()=>{clearTimeout(timer)}
+    },[])
+
+    if(!Pageloaded){
+        return <Loading/>
+    }
+
+
 
 
 
