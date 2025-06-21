@@ -85,7 +85,7 @@ const LoginForm =()=>{
         <form onSubmit={handleSubmit(submit)}>
             <div className={LoginFormStyle.title}>Sign In</div>
 
-            <input {...register("email")} type="email"  placeholder="Email" maxLength={254}></input>
+            <input {...register("email")} type="email"  placeholder="Email" maxLength={254} required></input>
             
             {errors.email ? <motion.div 
             initial={{scale:0,opacity:0}}
@@ -93,7 +93,7 @@ const LoginForm =()=>{
             transition={{duration:0.3}}
             className={LoginFormStyle.error}>{errors.email.message}</motion.div> :<></>}
 
-            <input {...register("password")} type="password"  placeholder="Password" maxLength={18}></input>
+            <input {...register("password")} type="password"  placeholder="Password" maxLength={18} required></input>
             
             {errors.password ?  <motion.div 
             initial={{scale:0,opacity:0}}

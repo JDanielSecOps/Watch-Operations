@@ -9,6 +9,7 @@ import { ReactNode } from "react"
 
 
 
+
 const QueryProvider =({children}:Readonly<{children:React.ReactNode}>)=>{
 
     const client = new QueryClient()
