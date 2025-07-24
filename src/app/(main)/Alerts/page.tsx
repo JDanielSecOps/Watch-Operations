@@ -20,7 +20,6 @@ const Alerts =()=>{
     async function alertresolved(id :string){
 
         const dataid=Number(id)
-        console.log(dataid)
         const {error}=await supabase.from("driver")
         .update({alerts : 0})
         .eq("id",dataid)
