@@ -32,7 +32,7 @@ const LoginForm =()=>{
         }
     )
 
-    const submit=async(data : LoginFormtype,e : Event)=>{
+    const submit=async(data : LoginFormtype)=>{
 
 
 
@@ -43,9 +43,7 @@ const LoginForm =()=>{
 
             const {data : userdata ,error}=await supabase.auth.signInWithPassword({email,password})
             if(!error){
-                e.preventDefault()
-                router.refresh()
-                router.push("/About")
+                window.location.href="/About"
                 return
             }
 
