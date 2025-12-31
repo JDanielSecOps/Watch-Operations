@@ -142,7 +142,7 @@ const DashBoard =()=>{
     const [PageLoaded,SetPageLoaded]=useState(false)
 
     useEffect(()=>{
-        const timer =setTimeout(()=>{SetPageLoaded(true)},500)
+        const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
         
         return ()=>{clearTimeout(timer)}
     },[])
