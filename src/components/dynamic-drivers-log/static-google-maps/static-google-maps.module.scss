@@ -8,13 +8,13 @@
     align-content: center;
     position: relative;
     flex-shrink: 1;
-    background-color: rgba(0, 0, 0, 0.386);
+    border:2px solid var(--card_color);
     width:50rem;
     max-height:20rem;
     min-height:40rem;
     padding:1rem;
     border-radius:1rem;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.61);
+    box-shadow: 4px 4px 5px var(--card_shadow);
 }
 
 
@@ -33,16 +33,17 @@
     flex-direction:column;
     justify-content: center;
     align-content: center;
-    background: rgba(0, 0, 0, 0.409);
-    color: white;
+    border: 2px solid  var(--button_color);
+    color: var(--button_text_color);
     border-radius:1rem;
     padding: 5px 10px 5px 10px;
     transform: scale(1);
     transition: transform 1s ease,color 1s ease;
-    border: none;
+
+    
 
     &:hover{
-        color: rgb(7, 233, 26);
+        color: var(--button_onhover);
         transform: scale(0.9);
     }
 }
@@ -64,6 +65,7 @@
         padding:1rem 1rem 3rem 1rem;
         min-height:1rem;
     }
+
 
 
 }

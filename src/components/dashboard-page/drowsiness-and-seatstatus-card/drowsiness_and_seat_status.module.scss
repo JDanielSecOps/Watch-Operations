@@ -8,29 +8,31 @@
     align-content: center;
     gap:2rem;
     padding:1rem 5rem 1rem 1rem;
-    background-color: rgba(0, 0, 0, 0.491);
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.872);
+    border:2px solid var(--card_color);
+    box-shadow: 4px 4px 5px var(--card_shadow);
     border-radius:0.95rem;
     min-width:15rem;
     overflow: hidden;
 }
 
 .statustitle{
+    color:var(--card_text_color);
     font-size: 1.1rem;
     white-space: nowrap;
 }
 
 .sleeptitle{
+    color:var(--card_text_color);
     font-size: 1.1rem;
     white-space: nowrap;
 }
 
 .status{
-    color: #D8B4DD;
+    color: var(--seat_status);
 }
 
 .sleep{
-    color: #A3C4F7;
+    color:var(--drowsiness_color);
 }
 
 

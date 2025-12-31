@@ -6,20 +6,21 @@
    flex-direction: column;
    justify-content:flex-start;
    align-content: flex-start;
-   background-color: rgba(0, 0, 0, 0.445);
+   border:2px solid var(--card_color);
    padding:1rem 5rem 1rem 1rem;
    border-radius:0.95rem;
-   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.872);
+   box-shadow: 4px 4px 5px var(--card_shadow);
    width:18rem;
    overflow: hidden;
    white-space:nowrap;
 }
 
 .dateandtimetitle{
+    color:var(--card_text_color);
     font-family: 1.1rem;
     white-space: nowrap;
 }
 
 .dateandtime{
-    color: #32CD32;
+    color:var(--date_and_time);
 }

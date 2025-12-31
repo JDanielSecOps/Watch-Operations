@@ -55,6 +55,7 @@
 }
 
 .charttitle{
+    color: var(--card_text_color);
     padding: 0.5rem;
 }
 
@@ -69,12 +70,12 @@
     align-items: center;
     gap:1.2rem;
     flex-shrink: 1;
-    background-color: rgba(0, 0, 0, 0.386);
+    border:2px solid var(--card_color);
     width:50rem;
     height: auto;
     padding:1rem 1rem 2rem 1rem;
     border-radius:1rem;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.61); 
+    box-shadow: 4px 4px 5px var(--card_shadow); 
     outline: none;
     
 }
@@ -85,14 +86,14 @@
 
 .goback{
     font-size:large;
-    background-color: rgba(0, 0, 0, 0.447);
+    border: 2px solid var(--button_color);
+    color:var(--button_text_color);
     padding: 5px 10px 5px 10px;
     border-radius: 15px;
     transition: color 1s ease ,transform 1s ease;
-    border: none;
     
     &:hover{
-        color: rgb(127, 242, 255);
+        color: var(--button_onhover);
         transform: scale(0.9);
     }
 }
@@ -106,6 +107,12 @@
     padding: 1rem;
 }
 
+.gobackcentertop{
+
+    height: fit-content;
+    padding:1rem;
+
+}
 
 
 @media (max-width:1197px){
@@ -121,7 +128,7 @@
     }
 }
 
-@media (max-width:720px){
+@media (max-width:850px){
 
     .forward-status{
         flex-direction: column;
@@ -129,6 +136,10 @@
         justify-content:flex-start;
         align-content: flex-start;
         flex-shrink: 1;
+    }
+
+    .gobackcentertop{
+        margin-right: auto;
     }
 
     .date-and-time{
@@ -173,6 +184,6 @@
 
 @media (max-width:450px){
     .mapcenter{
-        padding: 1rem 1rem 5rem 1rem;
+        padding: 1rem 1rem 1rem 1rem;
     }
 }

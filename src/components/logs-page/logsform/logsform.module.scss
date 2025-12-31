@@ -2,7 +2,7 @@
 
 
 .card{
-    background-color: rgba(0, 0, 0, 0.416);
+    border:2px solid var(--card_color);
     width:20rem;
     padding: 1rem 2rem 5rem 2rem;
     border-radius: 1rem;
@@ -12,71 +12,71 @@
     align-content:center;
     gap:1rem;
     position: relative;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 5px var(--card_shadow);
 }
 
 .starttitle{
-    color: white;
+    color: var(--card_text_color);
     font-size:medium;
     overflow: visible;
     
 }
 .starttime{
+    
+    color: var(--input_text_color);
     padding:5px;
-    background-color: rgba(0, 0, 0, 0.365);
+    border: 2px solid var(--input_color);
     width: 100%;
-    border: none;
     border-radius:15px;
 }
 
 .endtitle{
     
-    color: white;
+    color: var(--card_text_color);
     font-size: medium;
     overflow: visible;
     
 }
 
 .endtime{
+    color: var(--input_text_color);
     padding:5px;
-    background-color: rgba(0, 0, 0, 0.365);
+    border: 2px solid var(--input_color);
     width: 100%;
-    border: none;
     border-radius:15px;
 }
 
+
 .select{
+    color: var(--selection_color);
     padding:5px;
-    background-color: rgba(0, 0, 0, 0.365);
-    border: none;
+    border: 2px solid var(--selection_color);
     border-radius:15px;
 }
 
 .options{
-    background-color: rgba(0, 0, 0, 0.365);
+    border: 2px solid var( --selection_text);
 }
 
 .submitbtn{
     position: absolute;
     bottom:20px;
     right:20px;
-
-    border: none;
+    color: var(--card_button_text_color);
     border-radius:15px;
-    background-color: rgba(0, 0, 0, 0.324);
+    border: 2px solid var(--card_button_color);
     padding: 5px 10px 5px 10px;
     transition: transform 1s ease,color 1s ease;
 
     &:hover{
         transform: scale(1.1);
-        color: rgb(7, 255, 7);
+        color: var(--card_button_onhover);
     }
 }
 
 
 .error{
-    color: red;
-    overflow: visible;
+    color: var(--error);
 }
 
 

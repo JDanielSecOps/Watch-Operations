@@ -1,5 +1,5 @@
 
-$mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
+
 
 
 .navbar{   
@@ -21,7 +21,7 @@ $mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
         
         display: inline-block;
         animation: rotate 10s linear infinite;
-        fill:white;
+        fill:var(--logo_svg_default);
         height:3.12rem;
         width:3.12rem;
         filter: brightness(100%) ;
@@ -29,7 +29,7 @@ $mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
 
 
         &:hover{
-            fill: rgb(70, 222, 192);
+            fill: var(--logo_svg_onhover);
             filter: brightness(120%);
         }
     }
@@ -38,16 +38,24 @@ $mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
         margin-top: 0.5rem;
         font-size: 1.5rem;
         text-align: justify;
-        color: white;
+        color:var(--title_default);
         transition:color 1s ease;
         
     }
 
     > .title:hover{
-        color:#65f2d1;
+        color:var(--title_onhover);
     }
 
 
+}
+
+.toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
 }
 
     @keyframes rotate {
@@ -60,7 +68,8 @@ $mobile-navbar-bg:linear-gradient(45deg,rgb(229, 84, 176),rgb(200, 101, 236));
     };
 
 
-@media (max-width:320px){
+
+@media (max-width:365px){
 
     .title{
         display: none;

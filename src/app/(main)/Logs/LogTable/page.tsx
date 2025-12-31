@@ -221,13 +221,13 @@ const LogTable =()=>{
                 <span>Information : </span>
                 <span>{data?.dataset}</span>
             </div>
-            <button className="goback" onClick={redirect}>Go Back</button>
+            <button className="gobacktop" onClick={redirect}>Go Back</button>
         </div>
         
         {isdriverslog && driver_table_data()}
         {isalerts && alerts_table_data()}
         <div className="centergoback">
-            <button className="goback" onClick={redirect}>Go Back</button>
+            <button className="gobackbottom" onClick={redirect}>Go Back</button>
         </div>
 
         </>

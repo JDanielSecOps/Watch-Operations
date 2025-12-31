@@ -9,12 +9,13 @@ import QueryProvider from "@/components/queryprovider/queryprovider";
 
 
 
+
 const Login =()=>{
      
     const[Pageloaded,SetPageLoaded]=useState(false)
 
     useEffect(()=>{
-        const timer=setTimeout(()=>{SetPageLoaded(true)},1000)
+        const timer=setTimeout(()=>{SetPageLoaded(true)},500)
         return ()=>{clearTimeout(timer)}
     },[])
 
@@ -24,7 +25,7 @@ const Login =()=>{
     
      return(
         <>
-        <QueryProvider>
+        
         <div className="center">
             <LoginForm></LoginForm>
             <div className="centerlink">
@@ -32,7 +33,7 @@ const Login =()=>{
             <Link className="link2" href={"https://github.com/JDanielSecOps/Watch-Operations"}>Click here for login credentials</Link>
             </div>
         </div>
-        </QueryProvider>
+
         </>
 
     )

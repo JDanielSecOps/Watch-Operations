@@ -13,7 +13,7 @@ const Accounts =()=>{
     const [PageLoaded,SetPageLoaded]=useState(false)
 
     useEffect(()=>{
-        const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
+        const timer =setTimeout(()=>{SetPageLoaded(true)},500)
         
         return ()=>{clearTimeout(timer)}
     },[])

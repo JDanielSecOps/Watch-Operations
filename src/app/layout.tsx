@@ -2,7 +2,11 @@
 
 import React from "react";
 import { Metadata } from "next";
-import "@/styles/layout.scss"
+import "@/styles/global.css"
+import { Toaster } from "sonner";
+import QueryProvider from "@/components/queryprovider/queryprovider";
+import { ThemeProvider } from "@/components/Theme-Provider/theme-provider";
+
 
 
 
@@ -12,20 +16,31 @@ import "@/styles/layout.scss"
 export const metadata :Metadata ={
 
     title:"Watch Operations",
-    description:"Designed and Built by Joseph Daniel",
+    description:"A real time driver monitering system",
     icons:{
         icon:"/images/orbital.svg"
     }
 }
 
 
-export default function Mainlayout({children}:Readonly<{children:React.ReactNode}>){
+export default function Rootlayout({children}:Readonly<{children:React.ReactNode}>){
   
 
     return(
-    <html lang="en">
-        <body>      
-            {children}
+    <html lang="en" suppressHydrationWarning>
+           
+        <body>
+            
+           <ThemeProvider
+           attribute={"class"}
+           defaultTheme="system"
+           enableSystem
+           disableTransitionOnChange>
+            <QueryProvider>
+                <Toaster position="top-right"/>
+                {children}
+            </QueryProvider>
+           </ThemeProvider>
         </body>
     </html>
     )

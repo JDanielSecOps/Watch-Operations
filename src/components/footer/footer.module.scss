@@ -7,22 +7,24 @@
     margin-top: auto;
     min-width:fit-content;
     margin-bottom:0.5rem;
+    padding: 1rem;
 
     >div > a{
         text-decoration: none;
         opacity: 1;
-        color:rgb(0, 255, 47);
+        color:var(--footer_text);
         transition: opacity 1s ease ,color 1s ease;
     }
 
     >div > a:hover{
         opacity: 0.5;
-        color:rgb(0, 217, 255);
+        color:var(--footer_text_onhover);
         transform: scale(1.1);
     }
 }
 
 .content{
+    color: var(--text_color);
     white-space:nowrap;
 }
 

@@ -1,3 +1,32 @@
+.gobacktop{
+    border: 2px solid var(--card_button_color);
+    color: var(--card_button_text_color);
+    padding: 5px 10px 5px 10px;
+    border-radius:15px;
+    width:10rem;
+    transition: color 1s ease ,transform 1s ease;
+    
+    &:hover{
+        color:var(--card_button_onhover);
+        transform: scale(1.1);
+    }
+}
+
+
+.gobackbottom{
+    border:2px solid var(--button_color);
+    color: var(--button_text_color);
+    padding: 5px 10px 5px 10px;
+    border-radius:15px;
+    width:10rem;
+    transition: color 1s ease ,transform 1s ease;
+    
+    &:hover{
+        color:var(--button_onhover);
+        transform: scale(1.1);
+    }
+}
+
 
 
 
@@ -6,26 +35,14 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    background: rgba(0, 0, 0, 0.381);
+    border:solid 2px var(--card_color);
     margin: 1rem;
     padding:1rem;
     border-radius:15px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.541);
+    box-shadow: 4px 4px 5px var(--card_color_shadow);
+    color: var(--card_text_color);
 }
 
-.goback{
-    background: rgba(0, 0, 0, 0.381);
-    padding: 5px 10px 5px 10px;
-    border-radius:15px;
-    width:10rem;
-    border: none;
-    transition: color 1s ease ,transform 1s ease;
-    
-    &:hover{
-        color: rgb(0, 255, 115);
-        transform: scale(1.1);
-    }
-}
 
 
 .center_error{
@@ -34,6 +51,7 @@
     justify-content: center;
     align-content: center;
     margin: auto;
+    color:var(--text_color);
 
     & .error{
         font-size:2rem;
@@ -44,46 +62,50 @@
 .tableholder{
     width:100%;
     padding:1rem 2rem 2rem 2rem;
-    
+   
 }
 
 caption{
+    font-family:Poppins;
     font-size:1.5rem;
     padding: 1rem;
-    font-weight: 10;
+    font-weight:800;
+    color: var(--text_color);
 }
 
 table{
     
     width: 100%;
     border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0.292);
+    border:2px solid var(--tablerowonecolor);
     border-radius:15px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.541);
+    box-shadow: 4px 4px 5px var(--tableshadow);
     
 }
 
 td,th{
+    color: var(--tablecontentcolor);
     padding: 1rem;
     text-align:center;
 }
 
 
 tr:nth-of-type(2n){
-    background-color: rgba(0, 0, 0, 0.139);
+    border:2px solid var(--tablerowtwocolor);
+    
 }
 
 
 .morebutton{
-    background-color: rgba(0, 0, 0, 0.374);
+    border:2px solid var(--table_button_color);
+    color: var(--table_button_text_color);
     border-radius:15px;
     padding:5px 10px 5px 10px;
-    border: none;
     transition:color 1s ease,transform 1s ease;
 
     &:hover{
         transform:scale(1.1);
-        color: blueviolet;
+        color: var(--table_button_onhover);
     }
 
     > a{

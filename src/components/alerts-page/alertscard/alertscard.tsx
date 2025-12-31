@@ -1,5 +1,6 @@
 "use client"
 import alerscardstyles from "@/components/alerts-page/alertscard/alertscard.module.scss"
+import { toast } from "sonner"
 
 
 type alertscardpropstype={
@@ -24,9 +25,9 @@ type alertscardpropstype={
 const AlertsCard =(props: alertscardpropstype)=>{
 
     const Alerts : Record <number,[string,string]>={
-    0:["No Emergency","green"],
-    1:["Emergency","yellow"],
-    2:["Critical","red"]
+    0:["No Emergency","var(--noemergency)"],
+    1:["Emergency","var(--emergency)"],
+    2:["Critical","var(--critical)"]
 }
     return(
         <div key={props.id} className={alerscardstyles.card}>
@@ -74,7 +75,9 @@ const AlertsCard =(props: alertscardpropstype)=>{
                 <span className={alerscardstyles.title}>Speed : </span>
                 <span className={alerscardstyles.content}>{props.speed}</span>
             </div>
-            <button className={alerscardstyles.resolved} onClick={()=>{props.actioncall(props.id)}}>Resolved</button>
+            <button className={alerscardstyles.resolved} onClick={()=>{
+                props.actioncall(props.id)
+                toast.success(`incident on ${new Date(props.date_and_time).toLocaleString()} has been resolved`)}}>Resolved</button>
         </div>
     )
 }

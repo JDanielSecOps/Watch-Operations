@@ -15,8 +15,8 @@
     max-width: 15rem;
     min-height:15rem;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.491);
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.872);
+    border:2px solid var(--card_color);
+    box-shadow: 4px 4px 5px var(--card_shadow);
     border-radius:0.95rem;
     gap:1rem;
     font-family:Poppins;
@@ -29,11 +29,13 @@
 
 
 .title{
+    color:var(--card_text_color);
     font-size: 1rem;
     white-space: nowrap;
 }
 
 .maintitle{
+    color:var(--card_text_color);
     font-size:2rem;
     font-weight: bold;
 }

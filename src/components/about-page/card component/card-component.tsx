@@ -19,9 +19,14 @@ const CardComponentForIndex =(props:cardprops)=>{
 
     return(
         <div className={CardComponenetSytle.card}>
-            <span className={CardComponenetSytle.spansvg} color={props.color}><Link href={props.href}>{props.svg}</Link></span>
+            <div className={CardComponenetSytle.holder}>
+
+            
+                <Link href={props.href}>{props.svg}</Link>
             <Link href={props.href}>{props.title}</Link>
-            <div>{props.para}</div>
+        
+            </div>
+            <div className={CardComponenetSytle.para}>{props.para}</div>
         </div>
     )
 }

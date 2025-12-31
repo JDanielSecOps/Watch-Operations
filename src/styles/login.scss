@@ -26,12 +26,12 @@
 .link1{
 
         text-decoration: none;
-        color: rgb(0, 255, 183);
+        color:var(--hyperlink1-default) ;
         transition:color 0.5s ease ;
 
 
     &:hover{
-        color: rgb(252, 3, 140);
+        color:var(--hyperlink1-hover) ;
     }
 }
 
@@ -39,12 +39,12 @@
 .link2{
 
         text-decoration: none;
-        color: rgba(0, 225, 255, 0.747);
+        color: var(--hyperlink2-default);
         transition:color 0.5s ease ;
         
 
     &:hover{
-        color: rgb(152, 255, 168);
+        color:var(--hyperlink2-hover);
     }
 }
 

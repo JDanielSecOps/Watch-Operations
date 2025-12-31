@@ -5,10 +5,11 @@ import { string } from "zod/v4"
 import { redirect,useRouter } from "next/navigation";
 import {motion} from "motion/react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { formcontext } from "@/context/formcontext";
 import { type } from "os";
-import { time } from "console";
+import { error, time } from "console";
+import { toast } from "sonner";
 
 const schema =z.object({
 
@@ -33,6 +34,13 @@ const LogsForm =()=>{
         }
     )
 
+    useEffect(()=>{
+        
+        Object.values(errors).forEach(error=>{
+            toast.error(error.message)
+        })
+    },[errors])
+
     const submit=async(data : LogsFromType)=>{
 
         if(data.information==="Driver Logs"){
@@ -43,16 +51,10 @@ const LogsForm =()=>{
         const time_in_seconds=(ending_time.getTime()-starting_date.getTime())/1000
 
         if(time_in_seconds>300){
-            setError("root",{
-                type:"server",
-                message:"Cannot Query more than 5 minutes of data"
-            })
+            toast.error("Cannot Query more than 5 minutes of data")
             return
         }else if(time_in_seconds<=0 ){
-            setError("root",{
-                type:"server",
-                message:"Time cannot be negative or zero"
-            })
+            toast.error("Time cannot be negative or zero")
             return
         }
 
@@ -69,10 +71,7 @@ const LogsForm =()=>{
 
         catch(err){
             console.log(err)
-            setError("root",{
-                type:"server",
-                message:"Something went wrong please try later"
-            })
+            toast.error("Something went wrong please try later")
         }
 
         }else if(data.information==="Alerts"){
@@ -87,17 +86,10 @@ const LogsForm =()=>{
 
 
         if(time_in_days>2){
-
-            setError("root",{
-                type:"server",
-                message:"Cannot Query more than 2 days of data"
-            })
+            toast.error("Cannot Query more than 2 days of data")
             return
         }else if(time_in_days<=0 ){
-            setError("root",{
-                type:"server",
-                message:"Time cannot be negative or zero"
-            })
+            toast.error("Time cannot be negative or zero")
             return
         }
 
@@ -113,10 +105,7 @@ const LogsForm =()=>{
         }
         catch(err){
             console.log(err)
-            setError("root",{
-                type:"server",
-                message:"Something went wrong please try later"
-            })
+            toast.error("Something went wrong please try later")
         }
         }
     }
@@ -132,20 +121,10 @@ const LogsForm =()=>{
             <div className={logsfromstyle.starttitle}>Commencement Time</div>
             <input  {...register("starting_time")}type="datetime-local" className={logsfromstyle.starttime} required></input>
 
-            {errors.starting_time ? <motion.div 
-            initial={{scale:0,opacity:0}}
-            animate={{scale:1,opacity:1}}
-            transition={{duration:0.3}}
-            className={logsfromstyle.error}>{errors.starting_time?.message}</motion.div> :<></>}
 
             <div className={logsfromstyle.endtitle}>End Time</div>
             <input {...register("ending_time")} type="datetime-local" className={logsfromstyle.endtime} required></input>
 
-            {errors.ending_time ? <motion.div 
-            initial={{scale:0,opacity:0}}
-            animate={{scale:1,opacity:1}}
-            transition={{duration:0.3}}
-            className={logsfromstyle.error}>{errors.ending_time?.message}</motion.div> :<></>}
 
             <div className={logsfromstyle.endtitle}>Information</div>
             <select {...register("information")} className={logsfromstyle.select} required>
@@ -153,18 +132,6 @@ const LogsForm =()=>{
                 <option className={logsfromstyle.options}>Alerts</option>
             </select>
             
-            {errors.information ? <motion.div 
-            initial={{scale:0,opacity:0}}
-            animate={{scale:1,opacity:1}}
-            transition={{duration:0.3}}
-            className={logsfromstyle.error}>{errors.information?.message}</motion.div> :<></>}
-
-            {errors.root ? <motion.div 
-            initial={{scale:0,opacity:0}}
-            animate={{scale:1,opacity:1}}
-            transition={{duration:0.3}}
-            className={logsfromstyle.error}>{errors.root?.message}</motion.div> :<></>}
-
             <button disabled={isSubmitting} className={logsfromstyle.submitbtn}>{
                 isSubmitting ? <motion.svg 
                 animate={{rotate:360,}}

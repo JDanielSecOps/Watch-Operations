@@ -11,25 +11,13 @@
   display: none;
 }
 
-*,*::after,*::before{
-    font-family:Poppins;
-    color: white;   
-    
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;
-    
 
-}
 
 body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(45deg,rgb(236, 143, 240),rgb(79, 137, 230));
+    background: var(--background);
 }
 
 .center{
@@ -54,10 +42,10 @@ a{
     text-decoration: none;
     font-size: 1rem;
     transition: color 1s ease,transform 1s ease;
-    color: rgb(0, 204, 255);
+    color: var(--hyperlink2-default);
 
     &:hover{
-        color: rgba(0, 255, 0, 0.868);
+        color: var(--hyperlink2-loading);
         transform: scale(0.9);
     }
 }

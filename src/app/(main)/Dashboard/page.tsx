@@ -142,7 +142,7 @@ const DashBoard =()=>{
     const [PageLoaded,SetPageLoaded]=useState(false)
 
     useEffect(()=>{
-        const timer =setTimeout(()=>{SetPageLoaded(true)},1000)
+        const timer =setTimeout(()=>{SetPageLoaded(true)},500)
         
         return ()=>{clearTimeout(timer)}
     },[])
@@ -168,33 +168,33 @@ const DashBoard =()=>{
             <FourDataCard
             title_one="Vitals"
             content_one={vitals}
-            color_one="#D8B4DD"
+            color_one="var(--status_only)"
 
             title_two="Heart Rate"
             content_two={heart_rate}
-            color_two="#A3C4F7"
+            color_two="var(--values_only)"
 
             title_three="SpO2"
             content_three={spO2}
-            color_three="#A3C4F7"
+            color_three="var(--values_only)"
 
             title_four="Body Temperature"
             content_four={body_temperature}
-            color_four="#A3C4F7"
+            color_four="var(--values_only)"
             />
 
             <FourDataCard
             title_one="Environment"
             content_one={environment}
-            color_one="#D8B4DD"
+            color_one="var(--status_only)"
 
             title_two="Ambient Temperature"
             content_two={ambient_temperature}
-            color_two="#A3C4F7"
+            color_two="var(--values_only)"
 
             title_three="Humidity"
             content_three={humidity}
-            color_three="#A3C4F7"
+            color_three="var(--values_only)"
 
             />
 
@@ -202,29 +202,30 @@ const DashBoard =()=>{
 
             title_one="Tracking"
             content_one={tracking}
-            color_one="#D8B4DD"
+            color_one="var(--status_only)"
 
             title_two="Latitude"
             content_two={latitude}
-            color_two="#A3C4F7"
+            color_two="var(--values_only)"
 
             title_three="Longitude"
             content_three={longitude}
-            color_three="#A3C4F7"
+            color_three="var(--values_only)"
 
             title_four="Speed"
             content_four={speed}
-            color_four="#A3C4F7"
+            color_four="var(--values_only)"
 
             title_five="Altitude from sea level"
             content_five={Altitude_from_sea_level}
-            color_five="#A3C4F7"
+            color_five="var(--values_only)"
             
             />
 
             <FourDataCard classname="alertscard"
             title_one="Alerts"
             content_one={alerts}
+            color_one="var(--card_text_color)"
             />
         </div>
 
@@ -240,20 +241,20 @@ const DashBoard =()=>{
             <ResponsiveContainer height="100%" width="100%" aspect={1.2} className={"responsivecontainer"}>
               <LineChart className="mainchart" data={chart_data}>
                 <Legend/>
-              <Tooltip contentStyle={{background:"black",borderRadius:8}}
-              labelStyle={{color:"white"}}
-              itemStyle={{color:"white"}}
+              <Tooltip contentStyle={{background:"var(--tooltip)",borderRadius:8}}
+              labelStyle={{color:"var(--label)"}}
+              itemStyle={{color:"var(--label)"}}
               
               />
-              <CartesianGrid stroke="white" vertical={false}/>
+              <CartesianGrid stroke="var(--stroke)" vertical={false}/>
 
-              <XAxis stroke="white" dataKey={"time"}/>
-              <YAxis stroke="white"/>
+              <XAxis stroke="var(--stroke)" dataKey={"time"}/>
+              <YAxis stroke="var(--stroke)"/>
 
               <Line
               type="monotone" 
               dataKey="heart_rate"
-              stroke="rgba(255, 0, 119, 0.85)"
+              stroke="var(--heart_rate_color)"
               strokeWidth={2}
               dot={false}
               isAnimationActive={false}
@@ -262,7 +263,7 @@ const DashBoard =()=>{
               <Line
               type="monotone"  
               dataKey="spo2"
-              stroke="rgba(0, 182, 255, 0.85)"
+              stroke="var(--spo2_color)"
               strokeWidth={2}
               isAnimationActive={false}
               dot={false}/>
@@ -270,7 +271,7 @@ const DashBoard =()=>{
               <Line 
               type="monotone" 
               dataKey="body_temperature"
-              stroke="rgba(0, 255, 51, 0.85)"
+              stroke="var(--body_temp_color)"
               strokeWidth={2}             
               dot={false}
               isAnimationActive={false}

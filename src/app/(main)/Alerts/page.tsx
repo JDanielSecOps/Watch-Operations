@@ -54,7 +54,7 @@ const Alerts =()=>{
 
     
     useEffect(()=>{
-        const timer =setTimeout(()=>{setPageLoaded(true)},1000)
+        const timer =setTimeout(()=>{setPageLoaded(true)},500)
         return ()=>{clearTimeout(timer)}
     },[])
 

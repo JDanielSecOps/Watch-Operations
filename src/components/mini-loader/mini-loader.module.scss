@@ -4,7 +4,7 @@
 .loading{
     height: 24px;
     width: 24px;
-    fill: white;
+    fill: var(--loading_svg_color);
     animation: rotate 1s alternate infinite;
 }
 

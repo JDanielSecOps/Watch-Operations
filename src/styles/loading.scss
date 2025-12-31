@@ -4,12 +4,12 @@
     flex-direction:row;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 .svg{
-    position:absolute;
-    top:15rem;
-    fill:linear-gradient(45deg,rgb(84, 229, 171),rgb(200, 101, 236));
+    
+    fill:var(--loading_svg_color);
     animation: rotate 1s linear infinite;
 }
 
