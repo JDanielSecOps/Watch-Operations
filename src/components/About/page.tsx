@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import CardComponentForIndex from "@/components/about-page/card component/card-component";
 import "@/styles/page.scss"
 import { motion } from "motion/react"
-import Loading from "../../(auth)/loading";
+import Loading from "@/app/(auth)/loading";
 
 
 
