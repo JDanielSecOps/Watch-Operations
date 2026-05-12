@@ -3,15 +3,31 @@
 import { useState,useEffect } from "react"
 
 
+const state = (data : number) : string=>{
 
+    let result = "Unknown";
 
-const Alertsetter=(data : number)=>{
+    switch(data){
 
-    const Alerts : Record <number,string>={
-        0:"There are no emergencies as of now",
-        1:"Emergency check on the driver could be required",
-        2:"An accident or emergency has happened kindly check on the driver"
+        case 0:
+            result = "There are no emergencies as of now"
+
+        case 1 :
+            
+            result ="Emergency check on the driver could be required"
+            break
+
+        case 2 :
+            result = "An accident or emergency has happened kindly check on the driver"
+            break
     }
+
+    return result
+}
+
+
+const Alertsetter=(data : number) : string=>{
+
 
 
     const [display,setdisplay]=useState<string>("Loading")
@@ -19,9 +35,9 @@ const Alertsetter=(data : number)=>{
     useEffect(()=>{
         const value=data
         if(value != null){
-            setdisplay(`${Alerts[data]}`)
+            setdisplay(state(data))
         }
-    },[data])
+    },[data]) 
 
     return display
 

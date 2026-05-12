@@ -12,7 +12,7 @@ export default function NotFound(){
         <div className="center">
             <div className="error">Error 404</div>
             <div className="explain">Page not found</div>
-            <Link href="/About">Click here to return home</Link>
+            <Link href="/Dashboard">Click here to return home</Link>
         </div>
         </>
 

@@ -43,7 +43,7 @@ const LoginForm =()=>{
 
             const {data : userdata ,error}=await supabase.auth.signInWithPassword({email,password})
             if(!error){
-                window.location.href="/About"
+                window.location.href="/Dashboard"
                 return
             }
 
