@@ -34,6 +34,7 @@ yarn-error.log*
 .env*
 /data_generator
 /.vscode/
+/sytem_data_generator/libraries
 # vercel
 .vercel
 

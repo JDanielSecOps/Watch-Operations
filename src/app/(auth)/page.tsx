@@ -30,7 +30,7 @@ const Login =()=>{
             <LoginForm></LoginForm>
             <div className="centerlink">
             <span className="reenter">Already signed in ? <Link href={"/Dashboard"} className="link1">Click here</Link></span>
-            <Link className="link2" href={"https://github.com/JDanielSecOps/Watch-Operations"}>Click here for login credentials</Link>
+            <Link className="link2" href={"https://github.com/JDanielSecOps/Watch-Operations#credentials-for-login"}>Click here for login credentials</Link>
             </div>
         </div>
 

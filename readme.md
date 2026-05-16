@@ -10,6 +10,9 @@
 If you want to take a look around :\
 Kindly visit <a href="https://watch-operations.vercel.app/">Watch Operations</a>
 
+Note : before clicking on the link kindly ensure you are logged in inorder to view the pages enter the 
+[credentials](#credentials-for-login)
+
 
 ## Credentials for login 
 
@@ -57,7 +60,7 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 ├── components.json
 ├── content
 ├── data_generator
-│   └── data generator.py  -> responsible for generating test data (random data ofc)
+│   └── data_generator.py  -> responsible for generating test data (random data ofc)
 ├── drizzle.config.ts
 ├── eslint.config.mjs
 ├── next.config.ts
@@ -214,11 +217,64 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 
 ## Working Demo
 
-This is video showing how the system works :
+This video shows how the system works :
 
 https://github.com/user-attachments/assets/b4dba206-2b68-4459-b6e6-6f296bcdc24d
 
 
 
+## Installation
 
+1. Clone the repository
+
+```text
+    git clone https://github.com/JDanielSecOps/Watch-Operations.git
+```
+2. Install the necessary dependencies after entering into the cloned repository folder
+
+```text
+    npm install
+```
+
+3. In case of any highly vulnerable packages are found run
+
+``` text
+    npm audit fix
+```
+4. create a .env.local file in the directory of the project and create the following variables
+
+```text   
+NEXT_PUBLIC_SUPABASE_URL=
+DATABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+```
+
+5. create a supabase account and enter the credentials nto the variables in the .env.local file
+
+```
+NEXT_PUBLIC_SUPABASE_URL= (enter here the supabase api url)
+DATABASE_URL=(enter here the direct connection string)
+NEXT_PUBLIC_SUPABASE_ANON_KEY=(enter here the publishable key)
+```
+
+6.  After the prior steps has been completed then the users must be created 
+    by going to the supabse -> authentication ->manage
+    add users manually (this system was not implemented as company personal
+    will add users and users are not permitted to create accounts)
+    (this step is mandatory otherwise you will not be able to log in) 
+
+
+7. In  supabase -> authentication->Authentication and SignIn you may disable user Sign
+    -ins if you want and also you may implment rls (row level security) to control which
+    perfoms what operations (CRUD) on the data in the table
+
+
+8. Run the following commands to create the table
+
+```text
+    npx drizzle-kit push
+```
+
+9. Following this u can either hook this up to real sensors by tweaking the code to your need
+   or you can utilize the random generated data to see how the system works
 
