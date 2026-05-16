@@ -60,7 +60,7 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 ├── components.json
 ├── content
 ├── data_generator
-│   └── data_generator.py  -> responsible for generating test data (random data ofc)
+│   └── data_generator.py  -> responsible for generating test data (random data)
 ├── drizzle.config.ts
 ├── eslint.config.mjs
 ├── next.config.ts
@@ -227,35 +227,37 @@ https://github.com/user-attachments/assets/b4dba206-2b68-4459-b6e6-6f296bcdc24d
 
 1. Clone the repository
 
-```text
-    git clone https://github.com/JDanielSecOps/Watch-Operations.git
-```
+    ```text
+        git clone https://github.com/JDanielSecOps/Watch-Operations.git
+    ```
 2. Install the necessary dependencies after entering into the cloned repository folder
 
-```text
-    npm install
-```
+    ```text
+        npm install
+    ```
 
 3. In case of any highly vulnerable packages are found run
 
-``` text
-    npm audit fix
-```
+    ``` text
+        npm audit fix
+    ```
 4. create a .env.local file in the directory of the project and create the following variables
 
-```text   
-NEXT_PUBLIC_SUPABASE_URL=
-DATABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-```
+    ```text   
+    NEXT_PUBLIC_SUPABASE_URL=
+    DATABASE_URL=
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=
+    SECRET_KEY=
+    ```
 
 5. create a supabase account and enter the credentials nto the variables in the .env.local file
 
-```
-NEXT_PUBLIC_SUPABASE_URL= (enter here the supabase api url)
-DATABASE_URL=(enter here the ddrizzle orm string)
-NEXT_PUBLIC_SUPABASE_ANON_KEY=(enter here the publishable key)
-```
+    ```
+    NEXT_PUBLIC_SUPABASE_URL= (enter here the supabase api url)
+    DATABASE_URL=(enter here the drizzle orm connection string)
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=(enter here the publishable key)
+    SECRET_KEY=(enter the secret key from supabase)
+    ```
 
 6.  After the prior steps has been completed then the users must be created 
     by going to the supabse -> authentication ->manage
@@ -271,10 +273,29 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=(enter here the publishable key)
 
 8. Run the following commands to create the table
 
-```text
-    npx drizzle-kit push
-```
+    ```text
+        npx drizzle-kit push
+    ```
 
 9. Following this u can either hook this up to real sensors by tweaking the code to your need
    or you can utilize the random generated data to see how the system works
+
+10. Inorder to get the data generator up and running run the following commands
+
+    ```text
+
+    cd data_generator
+    pip install -r requirements.txt
+    python data\ generator.py
+
+    ```
+
+## Contributions
+   
+   For contributions or issues please open a pull request or issue
+
+## License 
+
+   This project was developed for academic and education purposes on collaboration
+   with TM automotive seating company
 
