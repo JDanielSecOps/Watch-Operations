@@ -105,11 +105,11 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 │   │   ├── space.png
 │   │   ├── status.png
 │   │   └── whiteeye.svg
-│   ├── components                                  -> consists of the components related to each page 
-│   │   ├── About                                      where each folder consists of a tsx file consisting  
-│   │   │   ├── loading.tsx                            of the implementation along with the styling
-│   │   │   └── page.tsx                               related to the component                               
-│   │   ├── about-page
+│   ├── components                                  -> consists of the components related 
+│   │   ├── About                                      to each page  where each folder consists 
+│   │   │   ├── loading.tsx                            of a tsx file consisting of the implementation along 
+│   │   │   └── page.tsx                               with the stylingrelated to the                             
+│   │   ├── about-page                                 component     
 │   │   │   └── card component
 │   │   │       ├── card-component.module.scss
 │   │   │       └── card-component.tsx
@@ -179,8 +179,8 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 │   │   │   └── stateloadhook.tsx
 │   │   └── unitloadhook
 │   │       └── unitloadhook.tsx
-│   ├── database                             -> consists of the database schema and other related stuff to
-│   │   ├── 0000_tidy_next_avengers.sql         supabase
+│   ├── database                         -> consists of the database schema
+│   │   ├── 0000_tidy_next_avengers.sql      and other related stuff to supabase
 │   │   ├── connection
 │   │   │   └── db_connection.ts
 │   │   ├── meta
@@ -216,10 +216,7 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 
 This is video showing how the system works :
 
-
-<video controls>
-    <source src="/content/demo.mp4">
-<video>
+https://github.com/user-attachments/assets/b4dba206-2b68-4459-b6e6-6f296bcdc24d
 
 
 
