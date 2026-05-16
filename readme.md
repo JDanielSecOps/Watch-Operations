@@ -35,7 +35,7 @@ Note : This repository consist of the webdev stuff only for the electronics and 
 ## Tech Stack
 
 * Frontend : Nextjs,Tanstack
-* Backend : Supabase
+* Backend : Supabase,drizzle
 * Styling : Sass,shadcn,Recharts
 
 ##  So what can it do ? 
