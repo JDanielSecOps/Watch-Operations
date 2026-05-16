@@ -216,10 +216,14 @@ Note : before clicking on the link kindly ensure you are logged in inorder to vi
 
 This is video showing how the system works :
 
+https://github.com/user-attachments/assets/b4dba206-2b68-4459-b6e6-6f296bcdc24d
 
-<video controls>
-    <source src="/content/demo.mp4">
-<video>
+
+
+
+
+
+
 
 
 
