@@ -10,8 +10,8 @@
 If you want to take a look around :\
 Kindly visit <a href="https://watch-operations.vercel.app/">Watch Operations</a>
 
-Note : before clicking on the link kindly ensure you are logged in inorder to view the pages enter the 
-[credentials](#credentials-for-login)
+Note : Inorder to view the contents of the website you need to be logged in kindly utilize the 
+[credentials](#credentials-for-login) provided
 
 
 ## Credentials for login 
@@ -40,7 +40,7 @@ Note : This repository consist of the webdev stuff only for the electronics and 
 
 ##  So what can it do ? 
 
-Note : before clicking on the link kindly ensure you are logged in inorder to view the pages enter the 
+Note : before clicking on the links kindly ensure you are logged in inorder to view the pages,enter the 
 [credentials](#credentials-for-login)
 
 * In the <a href="https://watch-operations.vercel.app/Dashboard">Dashboard</a> it shows the data which is queried from supbase which is responsible for storing the sensor data
