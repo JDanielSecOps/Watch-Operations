@@ -139,8 +139,8 @@
   --drowsiness_color: rgb(0, 195, 255);
   --seat_status: rgb(60, 255, 0);
 
-  --status_only: rgb(255, 0, 200);
-  --values_only: rgb(17, 0, 255);
+  --status_only: rgb(45, 8, 253);
+  --values_only: rgb(204, 0, 255);
 
   /* footer */
 
@@ -189,6 +189,12 @@
   --noemergency:green;
   --emergency:rgb(233, 205, 50);
   --critical:red;
+
+  /* select and options */
+
+  --options : white;
+  --options-text:black;
+  --select-border:black;
 }
 
 
@@ -342,6 +348,13 @@
   --emergency:rgb(248, 215, 27);
   --critical:red;
 
+
+    /* select and options */
+
+
+  --options : black;
+  --options-text:white;
+  --select-border:white;
 }
 
 @layer base {

@@ -4,7 +4,7 @@
 .card{
     border:2px solid var(--card_color);
     width:20rem;
-    padding: 1rem 2rem 5rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     padding:5px;
     border: 2px solid var(--input_color);
     width: 100%;
-    border-radius:15px;
+    border-radius:0.5rem;
 }
 
 .endtitle{
@@ -43,7 +43,7 @@
     padding:5px;
     border: 2px solid var(--input_color);
     width: 100%;
-    border-radius:15px;
+    border-radius:0.5rem;
 }
 
 
@@ -51,19 +51,46 @@
     color: var(--selection_text);
     padding:5px;
     border: 2px solid var(--selection_color);
-    border-radius:15px;
+    border-radius:0.5rem;
 }
 
 .options{
-    border: 2px solid var( --selection_text);
+    border: 2px solid var( --select-border);
+    color: var(--options-text);
+    background-color: var(--options);
+    border-radius: 0.5rem;
+}
+
+
+.button_holder{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin: 1rem 0px 0px 0px;
 }
 
 .submitbtn{
-    position: absolute;
-    bottom:20px;
-    right:20px;
+
     color: var(--card_button_text_color);
-    border-radius:15px;
+    border-radius:0.5rem;
+    border: 2px solid var(--card_button_color);
+    padding: 5px 10px 5px 10px;
+    transition: transform 1s ease,color 1s ease;
+
+    &:hover{
+        transform: scale(1.1);
+        color: var(--card_button_onhover);
+    }
+
+}
+
+.recent{
+
+
+    color: var(--card_button_text_color);
+    border-radius:0.5rem;
     border: 2px solid var(--card_button_color);
     padding: 5px 10px 5px 10px;
     transition: transform 1s ease,color 1s ease;
@@ -84,7 +111,7 @@
 
     .card{
         width:18rem;
-        padding: 1rem 1rem 5rem 1rem;
+        padding: 1rem 1rem 2rem 1rem;
     }
 }
 

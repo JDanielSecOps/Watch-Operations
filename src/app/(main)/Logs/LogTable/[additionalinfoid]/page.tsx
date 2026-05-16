@@ -104,7 +104,7 @@ const DriverData = () => {
 
 
     function redirect() {
-        router.push("/Logs/LogTable")
+        router.back()
     }
 
 

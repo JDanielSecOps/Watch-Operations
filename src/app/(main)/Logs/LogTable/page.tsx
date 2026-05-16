@@ -4,7 +4,7 @@ import { useContext, useEffect,useState } from "react"
 import Loading from "./loading"
 import { formcontext } from "@/context/formcontext"
 import "@/styles/logtable.scss"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { createClient } from "@/utils/supabase/client"
 import { useQuery } from "@tanstack/react-query"
 
@@ -22,13 +22,21 @@ const LogTable =()=>{
 
     const supabase=createClient()
     const router=useRouter()
-    const {data} =useContext(formcontext)
-    const [PageLoaded,SetPageLoaded]=useState(false)
-    const isalerts=data?.dataset==="Alerts" && !!data?.starting_date && !!data?.ending_date
-    const isdriverslog=data?.dataset==="Driver Logs" && !!data?.starting_date && !!data?.ending_date
+    const searchparams =useSearchParams()
 
-    const normalstartingdate=data?.starting_date.replace("T"," ") + ":00"
-    const normalendingdate=data?.ending_date.replace("T"," ") + ":00"
+    const starting_date =searchparams.get("st")
+    const ending_date =searchparams.get("et")
+    const info =searchparams.get("info")
+
+    const [PageLoaded,SetPageLoaded]=useState(false)
+    const isalerts=info==="Alerts" && !!starting_date && !!ending_date
+    const isdriverslog=info==="Driver Logs" && !!starting_date && !!ending_date
+
+    const normalstartingdate=new Date(starting_date!!).toLocaleString()
+    const normalendingdate=new Date(ending_date!!).toLocaleString()
+
+    // new Date(starting_date!!).toISOString()
+    // new Date(ending_date!!).toISOString()
 
     const {data :driver_data ,isLoading :driver_data_loading } =useQuery({
 
@@ -50,7 +58,8 @@ const LogTable =()=>{
 
         enabled:isdriverslog
     })
-
+    
+    
 
 
     const {data :alerts_data ,isLoading :alerts_data_loading} =useQuery({
@@ -81,7 +90,7 @@ const LogTable =()=>{
         return ()=>{clearTimeout(timer)}
     },[])
 
-    if(!data?.dataset && !data?.ending_date && !data?.starting_date){
+    if(info && !ending_date && !starting_date){
         return(
             <div className="center_error">
                     <div className="error">Data not available</div>
@@ -107,7 +116,7 @@ const LogTable =()=>{
         return <Loading/>
     }
 
-    if(data?.dataset==="Driver Logs" && (!driver_data || driver_data.length===0)){
+    if(info==="Driver Logs" && (!driver_data || driver_data.length===0)){
 
         return(
             <div className="center_error">
@@ -115,7 +124,7 @@ const LogTable =()=>{
                         Data not available</div>
             </div>
         )
-    }else if(data?.dataset==="Alerts" && (!alerts_data || alerts_data.length===0)){
+    }else if(info==="Alerts" && (!alerts_data || alerts_data.length===0)){
         
         return(
             <div className="center_error">
@@ -151,7 +160,7 @@ const LogTable =()=>{
                             <td data-cell ="Latitude">{rows.latitude}</td>
                             <td data-cell ="Longitude">{rows.longitude}</td>
                             <td data-cell ="Speed">{rows.speed}</td>
-                            <td><button className="morebutton" onClick={()=>{moreinforedirect(rows.id)}}>View More</button></td>
+                            <td><button className="morebutton" onClick={()=>{moreinforedirect(rows.id)}}>View</button></td>
                     </tr>
                         )
                     })}
@@ -204,22 +213,22 @@ const LogTable =()=>{
     
 
 
-    if(data?.dataset && data?.starting_date && data?.ending_date){
+    if(info && starting_date && ending_date){
     
             return(
         <>
         <div className="databar">
             <div>
                 <span>Commencement Time : </span>
-                <span>{new Date(data?.starting_date).toLocaleString()}</span>
+                <span>{new Date(starting_date).toLocaleString("en-IN")}</span>
             </div>
             <div>
                 <span>End Time : </span>
-                <span>{new Date(data?.ending_date).toLocaleString()}</span>
+                <span>{new Date(ending_date).toLocaleString("en-IN")}</span>
             </div>
             <div>
                 <span>Information : </span>
-                <span>{data?.dataset}</span>
+                <span>{info}</span>
             </div>
             <button className="gobacktop" onClick={redirect}>Go Back</button>
         </div>

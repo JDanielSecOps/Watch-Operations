@@ -10,14 +10,14 @@
    padding:1rem 5rem 1rem 1rem;
    border-radius:0.95rem;
    box-shadow: 4px 4px 5px var(--card_shadow);
-   width:18rem;
+   min-width:18rem;
    overflow: hidden;
    white-space:nowrap;
 }
 
 .dateandtimetitle{
     color:var(--card_text_color);
-    font-family: 1.1rem;
+    font-size: 1.1rem;
     white-space: nowrap;
 }
 

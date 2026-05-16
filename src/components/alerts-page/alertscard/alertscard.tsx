@@ -75,9 +75,9 @@ const AlertsCard =(props: alertscardpropstype)=>{
                 <span className={alerscardstyles.title}>Speed : </span>
                 <span className={alerscardstyles.content}>{props.speed}</span>
             </div>
-            <button className={alerscardstyles.resolved} onClick={()=>{
+            {/* <button className={alerscardstyles.resolved} onClick={()=>{
                 props.actioncall(props.id)
-                toast.success(`incident on ${new Date(props.date_and_time).toLocaleString()} has been resolved`)}}>Resolved</button>
+                toast.success(`incident on ${new Date(props.date_and_time).toLocaleString()} has been resolved`)}}>Resolved</button> */}
         </div>
     )
 }

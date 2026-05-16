@@ -89,7 +89,7 @@
     border: 2px solid var(--button_color);
     color:var(--button_text_color);
     padding: 5px 10px 5px 10px;
-    border-radius: 15px;
+    border-radius: 0.5rem;
     transition: color 1s ease ,transform 1s ease;
     
     &:hover{
@@ -143,7 +143,12 @@
     }
 
     .date-and-time{
-        margin: 0;
+        margin: 0px;
+    }
+
+    .forward-status{
+        margin: 0px auto 0px 4rem;
+        
     }
 
     .drowsiness-and-seat-status{
@@ -153,13 +158,14 @@
 }
 
 
-@media (max-width:395px){
+@media (max-width:420px){
 
     .forward-status{
         flex-direction: column;
         justify-content:flex-start;
         align-content: flex-start;
         padding:1rem;
+        margin: 0px auto 0px 1rem;
     }
 
 
@@ -185,5 +191,9 @@
 @media (max-width:450px){
     .mapcenter{
         padding: 1rem 1rem 1rem 1rem;
+    }
+
+    .chartholder{
+        display: none;
     }
 }
