@@ -253,7 +253,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
 ```
 NEXT_PUBLIC_SUPABASE_URL= (enter here the supabase api url)
-DATABASE_URL=(enter here the direct connection string)
+DATABASE_URL=(enter here the ddrizzle orm string)
 NEXT_PUBLIC_SUPABASE_ANON_KEY=(enter here the publishable key)
 ```
 
