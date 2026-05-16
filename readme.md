@@ -2,7 +2,7 @@
 
 # Watch Operations A driver monitering Solution
 
- This is a project which was built for monitering driver vitals and providing alerts in case of any emergency incidents for personal monitering the driver
+ This is a project which was built for monitering driver vitals and providing alerts in case of any emergency incidents to personal monitering the driver
 
 
 ## Hosted Site
