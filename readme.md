@@ -111,7 +111,7 @@ Note : before clicking on the links kindly ensure you are logged in inorder to v
 │   ├── components                                  -> consists of the components related 
 │   │   ├── About                                      to each page  where each folder consists 
 │   │   │   ├── loading.tsx                            of a tsx file consisting of the implementation along 
-│   │   │   └── page.tsx                               with the stylingrelated to the                             
+│   │   │   └── page.tsx                               with the styling related to the                             
 │   │   ├── about-page                                 component     
 │   │   │   └── card component
 │   │   │       ├── card-component.module.scss
