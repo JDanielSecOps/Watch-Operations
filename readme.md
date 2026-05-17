@@ -2,7 +2,7 @@
 
 # Watch Operations A driver monitering Solution
 
- This is a project which was built for monitering driver vitals and providing alerts in case of any emergency incidents for personal monitering the driver
+ This is a project which was built for monitering driver vitals and providing alerts in case of any emergency incidents to personal monitering the driver
 
 
 ## Hosted Site
@@ -111,7 +111,7 @@ Note : before clicking on the links kindly ensure you are logged in inorder to v
 │   ├── components                                  -> consists of the components related 
 │   │   ├── About                                      to each page  where each folder consists 
 │   │   │   ├── loading.tsx                            of a tsx file consisting of the implementation along 
-│   │   │   └── page.tsx                               with the stylingrelated to the                             
+│   │   │   └── page.tsx                               with the styling related to the                             
 │   │   ├── about-page                                 component     
 │   │   │   └── card component
 │   │   │       ├── card-component.module.scss
