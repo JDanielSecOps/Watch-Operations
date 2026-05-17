@@ -292,7 +292,7 @@ https://github.com/user-attachments/assets/b4dba206-2b68-4459-b6e6-6f296bcdc24d
 
 ## Contributions
    
-   For contributions or issues please open a pull request or issue
+   For contributions,features or issues please open a pull request or issue
 
 ## License 
 
