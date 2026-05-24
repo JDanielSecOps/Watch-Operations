@@ -1,4 +1,7 @@
 
+<p align="center">
+    <img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/d96c31c8-accc-41ca-8523-56b2870f324b" />
+</p>
 
 # Watch Operations A driver monitering Solution
 
