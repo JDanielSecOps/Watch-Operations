@@ -58,13 +58,15 @@
 .side{
     color: var(--options-text);
     background-color: var(--options);
+    border: 2px solid var( --select-border);
+    border-radius: 0.5rem;
 }
 
 .options{
-    border: 2px solid var( --select-border);
+    
     color: var(--options-text);
     background-color: var(--options);
-    border-radius: 0.5rem;
+
 }
 
 
