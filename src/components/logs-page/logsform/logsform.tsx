@@ -5,7 +5,7 @@ import { string } from "zod/v4"
 import { redirect,useRouter } from "next/navigation";
 import {motion} from "motion/react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { type } from "os";
 import { error, time } from "console";
@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import { useQuery } from "@tanstack/react-query";
 import { createClient } from "@/utils/supabase/client";
 import { start } from "repl";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const schema =z.object({
 
@@ -29,11 +30,15 @@ const LogsForm =()=>{
     
     const router=useRouter()
     const supabase = createClient()
+    const [information,setinformation]=useState("")
 
-    const {register,handleSubmit,setError,formState:{errors,isSubmitting},getValues} =useForm<LogsFromType>(
+    const {register,handleSubmit,setError,formState:{errors,isSubmitting},getValues,setValue} =useForm<LogsFromType>(
 
         {
-            resolver:zodResolver(schema)
+            resolver:zodResolver(schema),
+            defaultValues:{
+                information:""
+            }
         }
     )
 
@@ -43,6 +48,11 @@ const LogsForm =()=>{
             toast.error(error.message)
         })
     },[errors])
+
+    useEffect(()=>{
+        setValue("information",information)
+    },[information])
+
 
 
     
@@ -69,6 +79,7 @@ const LogsForm =()=>{
 
     const recent =async(data : LogsFromType)=>{
 
+        
 
         const result =await date_query.refetch()  
 
@@ -110,6 +121,8 @@ const LogsForm =()=>{
     }
 
     const submit=async(data : LogsFromType)=>{
+
+        
 
         const starting_date=new Date(data.starting_time)
         const ending_time=new Date(data.ending_time)
@@ -185,10 +198,18 @@ const LogsForm =()=>{
 
 
             <div className={logsfromstyle.endtitle}>Information</div>
-            <select {...register("information")} className={logsfromstyle.select} >
-                <option className={logsfromstyle.options}>Driver Logs</option>
-                <option className={logsfromstyle.options}>Alerts</option>
-            </select>
+
+            <Select value={information} onValueChange={setinformation}>
+                <SelectTrigger className={logsfromstyle.select}>
+                    <SelectValue placeholder="Information"></SelectValue>
+                </SelectTrigger>
+                <SelectContent className={logsfromstyle.side}>
+                    <SelectGroup className={logsfromstyle.options}>
+                        <SelectItem value="Driver Logs">Driver Logs</SelectItem>
+                        <SelectItem value="Alerts">Alerts</SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
             
             <div className={logsfromstyle.button_holder}>
             

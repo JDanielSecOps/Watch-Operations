@@ -52,6 +52,12 @@
     padding:5px;
     border: 2px solid var(--selection_color);
     border-radius:0.5rem;
+    width: 100%;
+}
+
+.side{
+    color: var(--options-text);
+    background-color: var(--options);
 }
 
 .options{
@@ -104,6 +110,11 @@
 
 .error{
     color: var(--error);
+}
+
+
+.select{
+
 }
 
 
